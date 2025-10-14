@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiCall, API_ENDPOINTS } from '../config/api';
 
 const ActivitySelector = ({ destination, selectedActivities, onActivitiesSelected, onBack }) => {
   const [activities, setActivities] = useState([]);
@@ -15,8 +16,7 @@ const ActivitySelector = ({ destination, selectedActivities, onActivitiesSelecte
     try {
       setLoading(true);
       const state = destination.split(', ')[1];
-      const response = await fetch(`/api/locations/${encodeURIComponent(state)}`);
-      const data = await response.json();
+      const data = await apiCall(API_ENDPOINTS.LOCATIONS(state));
       setActivities(data);
     } catch (err) {
       setError('Failed to fetch activities');

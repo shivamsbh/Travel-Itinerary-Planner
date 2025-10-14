@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiCall, API_ENDPOINTS } from '../config/api';
 
 const TripForm = ({ onTripCreated }) => {
   const [states, setStates] = useState([]);
@@ -25,8 +26,7 @@ const TripForm = ({ onTripCreated }) => {
 
   const fetchStates = async () => {
     try {
-      const response = await fetch('/api/states');
-      const data = await response.json();
+      const data = await apiCall(API_ENDPOINTS.STATES);
       setStates(data);
     } catch (err) {
       setError('Failed to fetch states');
@@ -35,8 +35,7 @@ const TripForm = ({ onTripCreated }) => {
 
   const fetchLocations = async (state) => {
     try {
-      const response = await fetch(`/api/locations/${encodeURIComponent(state)}`);
-      const data = await response.json();
+      const data = await apiCall(API_ENDPOINTS.LOCATIONS(state));
       setLocations(data);
     } catch (err) {
       setError('Failed to fetch locations');
@@ -80,11 +79,8 @@ const TripForm = ({ onTripCreated }) => {
     }
 
     try {
-      const response = await fetch('/api/trips', {
+      const data = await apiCall(API_ENDPOINTS.TRIPS, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
           destination: `${formData.destination}, ${formData.state}`,
           startDate: formData.startDate,
@@ -94,15 +90,9 @@ const TripForm = ({ onTripCreated }) => {
         }),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        onTripCreated(data.trip, data.tripId);
-      } else {
-        setError(data.error || 'Failed to create trip');
-      }
+      onTripCreated(data.trip, data.tripId);
     } catch (err) {
-      setError('Network error. Please try again.');
+      setError(err.message || 'Failed to create trip');
     } finally {
       setLoading(false);
     }

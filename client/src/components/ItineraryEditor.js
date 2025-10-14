@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiCall, API_ENDPOINTS } from '../config/api';
 
 const ItineraryEditor = ({ tripId, tripData, itinerary, onItineraryUpdated, onBack }) => {
   const [editableItinerary, setEditableItinerary] = useState(itinerary);
@@ -63,27 +64,18 @@ const ItineraryEditor = ({ tripId, tripData, itinerary, onItineraryUpdated, onBa
     setError('');
 
     try {
-      const response = await fetch(`/api/trips/${tripId}/itinerary`, {
+      await apiCall(API_ENDPOINTS.UPDATE_ITINERARY(tripId), {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
           itinerary: editableItinerary
         }),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        onItineraryUpdated(editableItinerary);
-        setSuccess('Itinerary saved successfully!');
-        setTimeout(() => setSuccess(''), 3000);
-      } else {
-        setError(data.error || 'Failed to save itinerary');
-      }
+      onItineraryUpdated(editableItinerary);
+      setSuccess('Itinerary saved successfully!');
+      setTimeout(() => setSuccess(''), 3000);
     } catch (err) {
-      setError('Network error. Please try again.');
+      setError(err.message || 'Failed to save itinerary');
     } finally {
       setSaving(false);
     }
@@ -94,24 +86,15 @@ const ItineraryEditor = ({ tripId, tripData, itinerary, onItineraryUpdated, onBa
     setError('');
 
     try {
-      const response = await fetch(`/api/trips/${tripId}/share`, {
+      const data = await apiCall(API_ENDPOINTS.SHARE_TRIP(tripId), {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        const fullUrl = `${window.location.origin}${data.shareUrl}`;
-        setShareUrl(fullUrl);
-        setSuccess('Share link created successfully!');
-      } else {
-        setError(data.error || 'Failed to create share link');
-      }
+      const fullUrl = `${window.location.origin}${data.shareUrl}`;
+      setShareUrl(fullUrl);
+      setSuccess('Share link created successfully!');
     } catch (err) {
-      setError('Network error. Please try again.');
+      setError(err.message || 'Failed to create share link');
     } finally {
       setSharing(false);
     }

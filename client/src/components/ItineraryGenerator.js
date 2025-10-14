@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiCall, API_ENDPOINTS } from '../config/api';
 
 const ItineraryGenerator = ({ 
   tripId, 
@@ -18,32 +19,24 @@ const ItineraryGenerator = ({
     console.log('Generating itinerary with activities:', selectedActivities);
 
     try {
-      const response = await fetch(`/api/trips/${tripId}/generate-itinerary`, {
+      const data = await apiCall(API_ENDPOINTS.GENERATE_ITINERARY(tripId), {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
           selectedActivities: selectedActivities
         }),
       });
 
-      const data = await response.json();
       console.log('Server response:', data);
 
-      if (response.ok) {
-        if (data.itinerary && data.itinerary.length > 0) {
-          setGeneratedItinerary(data.itinerary);
-          onItineraryGenerated(data.itinerary);
-        } else {
-          setError('No itinerary was generated. Please check your selected activities.');
-        }
+      if (data.itinerary && data.itinerary.length > 0) {
+        setGeneratedItinerary(data.itinerary);
+        onItineraryGenerated(data.itinerary);
       } else {
-        setError(data.error || 'Failed to generate itinerary');
+        setError('No itinerary was generated. Please check your selected activities.');
       }
     } catch (err) {
       console.error('Network error:', err);
-      setError('Network error. Please try again.');
+      setError(err.message || 'Failed to generate itinerary');
     } finally {
       setLoading(false);
     }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { apiCall, API_ENDPOINTS } from '../config/api';
 
 const SharedItinerary = () => {
   const { shareId } = useParams();
@@ -14,16 +15,10 @@ const SharedItinerary = () => {
   const fetchSharedItinerary = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/shared/${shareId}`);
-      const data = await response.json();
-
-      if (response.ok) {
-        setItinerary(data);
-      } else {
-        setError(data.error || 'Shared itinerary not found');
-      }
+      const data = await apiCall(API_ENDPOINTS.SHARED_ITINERARY(shareId));
+      setItinerary(data);
     } catch (err) {
-      setError('Failed to load shared itinerary');
+      setError(err.message || 'Failed to load shared itinerary');
     } finally {
       setLoading(false);
     }
