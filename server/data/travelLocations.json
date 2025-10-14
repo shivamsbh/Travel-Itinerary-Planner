@@ -1,0 +1,612 @@
+{
+  "Maharashtra": [
+    {
+      "id": "mh001",
+      "name": "Gateway of India",
+      "category": "monument",
+      "duration": 2,
+      "description": "Iconic archway overlooking the Arabian Sea",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "mh002",
+      "name": "Ajanta Caves",
+      "category": "monument",
+      "duration": 4,
+      "description": "Ancient Buddhist cave paintings and sculptures",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "mh003",
+      "name": "Elephanta Caves",
+      "category": "spiritual",
+      "duration": 3,
+      "description": "Rock-cut caves dedicated to Hindu god Shiva",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "mh004",
+      "name": "Lonavala",
+      "category": "nature",
+      "duration": 6,
+      "description": "Hill station with beautiful valleys and waterfalls",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "mh005",
+      "name": "Sanjay Gandhi National Park",
+      "category": "nature",
+      "duration": 4,
+      "description": "Large protected area in Mumbai with wildlife",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "mh006",
+      "name": "Chhatrapati Shivaji Terminus",
+      "category": "monument",
+      "duration": 1,
+      "description": "Historic railway station and UNESCO World Heritage Site",
+      "bestTime": "Anytime"
+    },
+    {
+      "id": "mh007",
+      "name": "Marine Drive",
+      "category": "leisure",
+      "duration": 2,
+      "description": "Scenic waterfront promenade",
+      "bestTime": "Evening"
+    },
+    {
+      "id": "mh008",
+      "name": "Shirdi Sai Baba Temple",
+      "category": "spiritual",
+      "duration": 3,
+      "description": "Famous pilgrimage site dedicated to Sai Baba",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "mh009",
+      "name": "Mahabaleshwar",
+      "category": "nature",
+      "duration": 8,
+      "description": "Popular hill station with strawberry farms",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "mh010",
+      "name": "Tarkarli Beach",
+      "category": "beach",
+      "duration": 5,
+      "description": "Pristine beach with water sports activities",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "mh011",
+      "name": "Bhimashankar Temple",
+      "category": "spiritual",
+      "duration": 4,
+      "description": "One of the 12 Jyotirlinga temples",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "mh012",
+      "name": "Kolhapur Mahalaxmi Temple",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "Ancient temple dedicated to Goddess Mahalaxmi",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "mh013",
+      "name": "Pune Shaniwar Wada",
+      "category": "monument",
+      "duration": 2,
+      "description": "Historic fortified palace",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "mh014",
+      "name": "Aurangabad Bibi Ka Maqbara",
+      "category": "monument",
+      "duration": 2,
+      "description": "Tomb often called the Taj of Deccan",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "mh015",
+      "name": "Matheran Hill Station",
+      "category": "nature",
+      "duration": 8,
+      "description": "Eco-sensitive hill station with toy train",
+      "bestTime": "Full Day"
+    }
+  ],
+  "Rajasthan": [
+    {
+      "id": "rj001",
+      "name": "Hawa Mahal",
+      "category": "monument",
+      "duration": 1,
+      "description": "Palace of Winds with intricate architecture",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj002",
+      "name": "Amber Fort",
+      "category": "monument",
+      "duration": 3,
+      "description": "Majestic fort with elephant rides",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj003",
+      "name": "City Palace Jaipur",
+      "category": "monument",
+      "duration": 2,
+      "description": "Royal palace complex with museums",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj004",
+      "name": "Thar Desert Safari",
+      "category": "adventure",
+      "duration": 6,
+      "description": "Camel safari in the Great Indian Desert",
+      "bestTime": "Evening to Night"
+    },
+    {
+      "id": "rj005",
+      "name": "Lake Pichola",
+      "category": "nature",
+      "duration": 2,
+      "description": "Artificial lake with boat rides",
+      "bestTime": "Evening"
+    },
+    {
+      "id": "rj006",
+      "name": "Mehrangarh Fort",
+      "category": "monument",
+      "duration": 3,
+      "description": "One of the largest forts in India",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj007",
+      "name": "Jantar Mantar",
+      "category": "monument",
+      "duration": 1,
+      "description": "Astronomical observation site",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj008",
+      "name": "Pushkar Lake",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "Sacred lake with ghats",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "rj009",
+      "name": "Jaisalmer Fort",
+      "category": "monument",
+      "duration": 4,
+      "description": "Living fort made of golden sandstone",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj010",
+      "name": "Mount Abu",
+      "category": "nature",
+      "duration": 8,
+      "description": "Only hill station in Rajasthan",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "rj011",
+      "name": "Ranthambore National Park",
+      "category": "wildlife",
+      "duration": 6,
+      "description": "Famous tiger reserve",
+      "bestTime": "Morning Safari"
+    },
+    {
+      "id": "rj012",
+      "name": "Chittorgarh Fort",
+      "category": "monument",
+      "duration": 4,
+      "description": "Largest fort in India",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj013",
+      "name": "Dilwara Temples",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "Exquisite Jain temples with marble carvings",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj014",
+      "name": "Keoladeo National Park",
+      "category": "wildlife",
+      "duration": 4,
+      "description": "Bird sanctuary and UNESCO World Heritage Site",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "rj015",
+      "name": "Kumbhalgarh Fort",
+      "category": "monument",
+      "duration": 3,
+      "description": "Fort with the second longest wall in the world",
+      "bestTime": "Morning"
+    }
+  ],
+  "Kerala": [
+    {
+      "id": "kl001",
+      "name": "Munnar Tea Gardens",
+      "category": "nature",
+      "duration": 6,
+      "description": "Scenic hill station with tea plantations",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "kl002",
+      "name": "Alleppey Backwaters",
+      "category": "nature",
+      "duration": 8,
+      "description": "Houseboat cruise through backwaters",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "kl003",
+      "name": "Kovalam Beach",
+      "category": "beach",
+      "duration": 4,
+      "description": "Popular beach with lighthouse",
+      "bestTime": "Morning to Afternoon"
+    },
+    {
+      "id": "kl004",
+      "name": "Periyar National Park",
+      "category": "wildlife",
+      "duration": 6,
+      "description": "Wildlife sanctuary with boat safari",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl005",
+      "name": "Fort Kochi",
+      "category": "heritage",
+      "duration": 3,
+      "description": "Historic area with colonial architecture",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "kl006",
+      "name": "Wayanad Wildlife Sanctuary",
+      "category": "wildlife",
+      "duration": 6,
+      "description": "Rich biodiversity with trekking trails",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl007",
+      "name": "Varkala Beach",
+      "category": "beach",
+      "duration": 4,
+      "description": "Cliffside beach with natural springs",
+      "bestTime": "Morning to Afternoon"
+    },
+    {
+      "id": "kl008",
+      "name": "Padmanabhaswamy Temple",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "Ancient temple dedicated to Lord Vishnu",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl009",
+      "name": "Athirapally Waterfalls",
+      "category": "waterfall",
+      "duration": 3,
+      "description": "Spectacular waterfall known as Niagara of India",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl010",
+      "name": "Kumarakom Bird Sanctuary",
+      "category": "wildlife",
+      "duration": 3,
+      "description": "Bird watching paradise",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl011",
+      "name": "Thekkady Spice Gardens",
+      "category": "nature",
+      "duration": 3,
+      "description": "Aromatic spice plantations",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl012",
+      "name": "Bekal Fort",
+      "category": "monument",
+      "duration": 2,
+      "description": "Coastal fort with Arabian Sea views",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "kl013",
+      "name": "Marari Beach",
+      "category": "beach",
+      "duration": 4,
+      "description": "Pristine beach with fishing villages",
+      "bestTime": "Morning to Afternoon"
+    },
+    {
+      "id": "kl014",
+      "name": "Silent Valley National Park",
+      "category": "nature",
+      "duration": 6,
+      "description": "Pristine tropical rainforest",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "kl015",
+      "name": "Kollam Backwaters",
+      "category": "nature",
+      "duration": 5,
+      "description": "Serene backwater experience",
+      "bestTime": "Morning to Afternoon"
+    }
+  ],
+  "Goa": [
+    {
+      "id": "ga001",
+      "name": "Baga Beach",
+      "category": "beach",
+      "duration": 4,
+      "description": "Popular beach with water sports and nightlife",
+      "bestTime": "Morning to Evening"
+    },
+    {
+      "id": "ga002",
+      "name": "Basilica of Bom Jesus",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "UNESCO World Heritage Site with St. Francis Xavier's remains",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "ga003",
+      "name": "Dudhsagar Waterfalls",
+      "category": "waterfall",
+      "duration": 6,
+      "description": "Spectacular four-tiered waterfall",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "ga004",
+      "name": "Fort Aguada",
+      "category": "monument",
+      "duration": 2,
+      "description": "17th-century Portuguese fort",
+      "bestTime": "Morning or Evening"
+    },
+    {
+      "id": "ga005",
+      "name": "Anjuna Beach",
+      "category": "beach",
+      "duration": 4,
+      "description": "Famous for flea market and trance parties",
+      "bestTime": "Afternoon to Evening"
+    },
+    {
+      "id": "ga006",
+      "name": "Spice Plantation Tour",
+      "category": "nature",
+      "duration": 3,
+      "description": "Guided tour through aromatic spice gardens",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "ga007",
+      "name": "Calangute Beach",
+      "category": "beach",
+      "duration": 3,
+      "description": "Queen of beaches with golden sand",
+      "bestTime": "Morning to Afternoon"
+    },
+    {
+      "id": "ga008",
+      "name": "Old Goa Churches",
+      "category": "heritage",
+      "duration": 3,
+      "description": "Historic churches and cathedrals",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "ga009",
+      "name": "Palolem Beach",
+      "category": "beach",
+      "duration": 5,
+      "description": "Crescent-shaped beach with palm trees",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "ga010",
+      "name": "Bondla Wildlife Sanctuary",
+      "category": "wildlife",
+      "duration": 4,
+      "description": "Small wildlife sanctuary with zoo",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "ga011",
+      "name": "Chapora Fort",
+      "category": "monument",
+      "duration": 1,
+      "description": "Ruined fort with panoramic views",
+      "bestTime": "Evening"
+    },
+    {
+      "id": "ga012",
+      "name": "Mandovi River Cruise",
+      "category": "leisure",
+      "duration": 2,
+      "description": "Scenic river cruise with cultural shows",
+      "bestTime": "Evening"
+    },
+    {
+      "id": "ga013",
+      "name": "Arambol Beach",
+      "category": "beach",
+      "duration": 4,
+      "description": "Hippie beach with drum circles",
+      "bestTime": "Afternoon to Evening"
+    },
+    {
+      "id": "ga014",
+      "name": "Fontainhas Latin Quarter",
+      "category": "heritage",
+      "duration": 2,
+      "description": "Portuguese colonial architecture",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "ga015",
+      "name": "Butterfly Beach",
+      "category": "beach",
+      "duration": 3,
+      "description": "Secluded beach accessible by boat",
+      "bestTime": "Morning to Afternoon"
+    }
+  ],
+  "Tamil Nadu": [
+    {
+      "id": "tn001",
+      "name": "Meenakshi Temple",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "Historic Hindu temple with intricate architecture",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn002",
+      "name": "Marina Beach",
+      "category": "beach",
+      "duration": 3,
+      "description": "Second longest urban beach in the world",
+      "bestTime": "Evening"
+    },
+    {
+      "id": "tn003",
+      "name": "Ooty Hill Station",
+      "category": "nature",
+      "duration": 8,
+      "description": "Queen of hill stations with tea gardens",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "tn004",
+      "name": "Brihadeeswarar Temple",
+      "category": "spiritual",
+      "duration": 2,
+      "description": "UNESCO World Heritage Chola temple",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn005",
+      "name": "Kodaikanal Lake",
+      "category": "nature",
+      "duration": 4,
+      "description": "Star-shaped artificial lake in hill station",
+      "bestTime": "Morning to Afternoon"
+    },
+    {
+      "id": "tn006",
+      "name": "Rameswaram Temple",
+      "category": "spiritual",
+      "duration": 3,
+      "description": "One of the four sacred Dhams",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn007",
+      "name": "Kanyakumari",
+      "category": "heritage",
+      "duration": 4,
+      "description": "Southernmost tip of India",
+      "bestTime": "Morning to Evening"
+    },
+    {
+      "id": "tn008",
+      "name": "Mahabalipuram",
+      "category": "monument",
+      "duration": 4,
+      "description": "UNESCO World Heritage rock-cut temples",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn009",
+      "name": "Nilgiri Mountain Railway",
+      "category": "heritage",
+      "duration": 6,
+      "description": "UNESCO World Heritage toy train",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "tn010",
+      "name": "Pondicherry French Quarter",
+      "category": "heritage",
+      "duration": 3,
+      "description": "Colonial French architecture and culture",
+      "bestTime": "Morning to Afternoon"
+    },
+    {
+      "id": "tn011",
+      "name": "Coonoor Tea Gardens",
+      "category": "nature",
+      "duration": 4,
+      "description": "Scenic tea plantations in Nilgiris",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn012",
+      "name": "Vellore Fort",
+      "category": "monument",
+      "duration": 2,
+      "description": "16th-century fort with museum",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn013",
+      "name": "Hogenakkal Falls",
+      "category": "waterfall",
+      "duration": 4,
+      "description": "Carbonatite rocks waterfall",
+      "bestTime": "Morning"
+    },
+    {
+      "id": "tn014",
+      "name": "Yercaud Hill Station",
+      "category": "nature",
+      "duration": 6,
+      "description": "Poor man's Ooty with coffee plantations",
+      "bestTime": "Full Day"
+    },
+    {
+      "id": "tn015",
+      "name": "Thanjavur Palace",
+      "category": "monument",
+      "duration": 3,
+      "description": "Maratha palace with art gallery",
+      "bestTime": "Morning"
+    }
+  ]
+}

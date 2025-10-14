@@ -1,0 +1,214 @@
+import React, { useState, useEffect } from 'react';
+
+const TripForm = ({ onTripCreated }) => {
+  const [states, setStates] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const [formData, setFormData] = useState({
+    state: '',
+    destination: '',
+    startDate: '',
+    endDate: '',
+    notes: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    fetchStates();
+  }, []);
+
+  useEffect(() => {
+    if (formData.state) {
+      fetchLocations(formData.state);
+    }
+  }, [formData.state]);
+
+  const fetchStates = async () => {
+    try {
+      const response = await fetch('/api/states');
+      const data = await response.json();
+      setStates(data);
+    } catch (err) {
+      setError('Failed to fetch states');
+    }
+  };
+
+  const fetchLocations = async (state) => {
+    try {
+      const response = await fetch(`/api/locations/${encodeURIComponent(state)}`);
+      const data = await response.json();
+      setLocations(data);
+    } catch (err) {
+      setError('Failed to fetch locations');
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+      ...(name === 'state' && { destination: '' }) // Reset destination when state changes
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    if (!formData.state || !formData.destination || !formData.startDate || !formData.endDate) {
+      setError('Please fill in all required fields');
+      setLoading(false);
+      return;
+    }
+
+    const startDate = new Date(formData.startDate);
+    const endDate = new Date(formData.endDate);
+    
+    if (endDate <= startDate) {
+      setError('End date must be after start date');
+      setLoading(false);
+      return;
+    }
+
+    const daysDifference = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+    if (daysDifference > 10) {
+      setError('Trip duration cannot exceed 10 days');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/trips', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          destination: `${formData.destination}, ${formData.state}`,
+          startDate: formData.startDate,
+          endDate: formData.endDate,
+          notes: formData.notes,
+          selectedActivities: [] // Will be populated later
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        onTripCreated(data.trip, data.tripId);
+      } else {
+        setError(data.error || 'Failed to create trip');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getTodayDate = () => {
+    return new Date().toISOString().split('T')[0];
+  };
+
+  return (
+    <div className="card">
+      <h2 style={{ marginBottom: '24px', color: '#333' }}>Plan Your Trip</h2>
+      
+      {error && <div className="error">{error}</div>}
+
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label className="form-label" htmlFor="state">State *</label>
+          <select
+            id="state"
+            name="state"
+            value={formData.state}
+            onChange={handleInputChange}
+            className="form-control"
+            required
+          >
+            <option value="">Select a state</option>
+            {states.map(state => (
+              <option key={state} value={state}>{state}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label className="form-label" htmlFor="destination">Destination *</label>
+          <select
+            id="destination"
+            name="destination"
+            value={formData.destination}
+            onChange={handleInputChange}
+            className="form-control"
+            required
+            disabled={!formData.state}
+          >
+            <option value="">Select a destination</option>
+            {locations.map(location => (
+              <option key={location.id} value={location.name}>
+                {location.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+          <div className="form-group">
+            <label className="form-label" htmlFor="startDate">Start Date *</label>
+            <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              value={formData.startDate}
+              onChange={handleInputChange}
+              className="form-control"
+              min={getTodayDate()}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="endDate">End Date *</label>
+            <input
+              type="date"
+              id="endDate"
+              name="endDate"
+              value={formData.endDate}
+              onChange={handleInputChange}
+              className="form-control"
+              min={formData.startDate || getTodayDate()}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <label className="form-label" htmlFor="notes">Notes (Optional)</label>
+          <textarea
+            id="notes"
+            name="notes"
+            value={formData.notes}
+            onChange={handleInputChange}
+            className="form-control"
+            rows="3"
+            placeholder="Any special preferences or requirements..."
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="btn"
+          disabled={loading}
+        >
+          {loading ? 'Creating Trip...' : 'Continue to Activities'}
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default TripForm;
