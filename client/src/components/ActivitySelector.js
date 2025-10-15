@@ -106,7 +106,12 @@ const ActivitySelector = ({ destination, selectedActivities, onActivitiesSelecte
             <div
               key={activity.id}
               className={`activity-card ${selected.some(a => a.id === activity.id) ? 'selected' : ''}`}
-              onClick={() => handleActivityToggle(activity)}
+              onClick={(e) => {
+                // Only handle click if it's not from the checkbox area
+                if (!e.target.closest('.checkbox-container')) {
+                  handleActivityToggle(activity);
+                }
+              }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div style={{ flex: 1 }}>
@@ -128,12 +133,32 @@ const ActivitySelector = ({ destination, selectedActivities, onActivitiesSelecte
                     </span>
                   </div>
                 </div>
-                <div style={{ marginLeft: '12px' }}>
+                <div 
+                  className="checkbox-container"
+                  style={{ 
+                    marginLeft: '12px',
+                    position: 'relative',
+                    zIndex: 10,
+                    padding: '4px',
+                    cursor: 'pointer'
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleActivityToggle(activity);
+                  }}
+                >
                   <input
                     type="checkbox"
                     checked={selected.some(a => a.id === activity.id)}
-                    onChange={() => handleActivityToggle(activity)}
-                    style={{ width: '20px', height: '20px' }}
+                    onChange={(e) => {
+                      e.stopPropagation();
+                    }}
+                    style={{ 
+                      width: '20px', 
+                      height: '20px', 
+                      cursor: 'pointer',
+                      pointerEvents: 'auto'
+                    }}
                   />
                 </div>
               </div>
