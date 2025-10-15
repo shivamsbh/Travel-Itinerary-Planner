@@ -85,7 +85,7 @@ CORS_ORIGIN=https://your-frontend-domain.com
 3. **Deploy to Vercel**:
    ```bash
    cd client
-   vercel --prod
+   # Deploy to your chosen platform (e.g., npm run build for static hosting)
    ```
 
 #### **Backend Deployment (Heroku/Railway)**
