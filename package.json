@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "cd client && npm install && npm run build",
-    "vercel-build": "cd client && npm install && npm run build",
+    "vercel-build": "./build.sh",
     "start": "cd client && npm start",
     "install-client": "cd client && npm install",
     "install-server": "cd server && npm install",
