@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import TripPlanner from './components/TripPlanner';
 import SharedItinerary from './components/SharedItinerary';
-import TestComponent from './components/TestComponent';
 
 function App() {
   // Add error boundary for debugging
