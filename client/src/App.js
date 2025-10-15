@@ -36,26 +36,17 @@ function App() {
     );
   }
   
-  try {
-    return (
-      <div className="App">
-        <Header />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<TripPlanner />} />
-            <Route path="/share/:shareId" element={<SharedItinerary />} />
-          </Routes>
-        </div>
+  return (
+    <div className="App">
+      <Header />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<TripPlanner />} />
+          <Route path="/share/:shareId" element={<SharedItinerary />} />
+        </Routes>
       </div>
-    );
-  } catch (error) {
-    console.error('Render Error:', error);
-    return (
-      <div className="App">
-        <TestComponent />
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
