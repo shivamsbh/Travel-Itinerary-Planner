@@ -10,7 +10,7 @@ const ActivitySelector = ({ destination, selectedActivities, onActivitiesSelecte
 
   useEffect(() => {
     fetchActivities();
-  }, [destination]);
+  }, [destination]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchActivities = async () => {
     try {

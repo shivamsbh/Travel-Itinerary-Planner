@@ -10,7 +10,7 @@ const SharedItinerary = () => {
 
   useEffect(() => {
     fetchSharedItinerary();
-  }, [shareId]);
+  }, [shareId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchSharedItinerary = async () => {
     try {
