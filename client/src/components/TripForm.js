@@ -26,19 +26,33 @@ const TripForm = ({ onTripCreated }) => {
 
   const fetchStates = async () => {
     try {
+      console.log('Fetching states from:', `${process.env.REACT_APP_API_BASE_URL || 'https://jsonplaceholder.typicode.com'}${API_ENDPOINTS.STATES}`);
       const data = await apiCall(API_ENDPOINTS.STATES);
+      console.log('States fetched successfully:', data);
       setStates(data);
     } catch (err) {
-      setError('Failed to fetch states');
+      console.error('Failed to fetch states:', err);
+      setError(`Failed to fetch states: ${err.message}`);
+      // Provide fallback data so app doesn't break
+      setStates(['California', 'New York', 'Texas', 'Florida', 'Colorado']);
     }
   };
 
   const fetchLocations = async (state) => {
     try {
+      console.log('Fetching locations for state:', state);
       const data = await apiCall(API_ENDPOINTS.LOCATIONS(state));
+      console.log('Locations fetched successfully:', data);
       setLocations(data);
     } catch (err) {
-      setError('Failed to fetch locations');
+      console.error('Failed to fetch locations:', err);
+      setError(`Failed to fetch locations: ${err.message}`);
+      // Provide fallback data
+      setLocations([
+        { id: 1, name: 'Sample City 1' },
+        { id: 2, name: 'Sample City 2' },
+        { id: 3, name: 'Sample City 3' }
+      ]);
     }
   };
 
