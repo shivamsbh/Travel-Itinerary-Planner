@@ -6,7 +6,7 @@ const API_CONFIG = {
     timeout: 10000,
   },
   production: {
-    baseURL: process.env.REACT_APP_API_BASE_URL || 'https://your-actual-backend-url-here.com',
+    baseURL: process.env.REACT_APP_API_BASE_URL || 'https://jsonplaceholder.typicode.com',
     timeout: 15000,
   }
 };
