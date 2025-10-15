@@ -2,7 +2,7 @@
 
 const API_CONFIG = {
   development: {
-    baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000',
+    baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001',
     timeout: 10000,
   },
   production: {
